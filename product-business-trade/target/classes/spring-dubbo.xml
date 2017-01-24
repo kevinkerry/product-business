@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<dubbo:service interface="com.zcbspay.platform.business.pay.service.QuickPayService" ref="quickPayServiceImpl" retries="0" timeout="30000" version="1.0"/>
+
+
+	<dubbo:reference id="memberBankCardService" interface="com.zcbspay.platform.member.individual.service.MemberBankCardService" retries="10" version="1.0"/>
+	<dubbo:reference id="quickPayService" interface="com.zcbspay.platform.payment.quickpay.service.QuickPayService" retries="10" version="1.0"/>
+	<dubbo:reference id="realTimeInsteadPayService" interface="com.zcbspay.platform.payment.quickpay.service.RealTimeInsteadPayService" retries="10" version="1.0"/>
+	
+</beans>
