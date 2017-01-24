@@ -16,18 +16,6 @@ import com.zcbspay.platform.payment.exception.PaymentRouterException;
 import com.zcbspay.platform.payment.quickpay.bean.InsteadPayOrderBean;
 import com.zcbspay.platform.payment.quickpay.service.RealTimeInsteadPayService;
 
-/*import com.zlebank.zplatform.business.commons.bean.ResultBean;
-import com.zlebank.zplatform.business.commons.enums.OrderStatusEnum;
-import com.zlebank.zplatform.business.pay.bean.RealTimeInstPayBean;
-import com.zlebank.zplatform.business.pay.service.RealtimeInstPayService;
-import com.zlebank.zplatform.member.commons.utils.BeanCopyUtil;
-import com.zlebank.zplatform.payment.exception.PaymentInsteadPayException;
-import com.zlebank.zplatform.payment.exception.PaymentOrderException;
-import com.zlebank.zplatform.payment.exception.PaymentQuickPayException;
-import com.zlebank.zplatform.payment.exception.PaymentRouterException;
-import com.zlebank.zplatform.payment.order.bean.InsteadPayOrderBean;
-import com.zlebank.zplatform.payment.quickpay.service.RealTimeInsteadPayService;*/
-
 @Service
 public class RealtimeInstPayServiceImpl implements RealtimeInstPayService {
 	private final static Logger log = LoggerFactory.getLogger(RealtimeInstPayServiceImpl.class);
@@ -35,6 +23,11 @@ public class RealtimeInstPayServiceImpl implements RealtimeInstPayService {
 	@Autowired
 	private RealTimeInsteadPayService realtimeInstPayService;
 
+	/****
+	 * 单笔支付(无短信验证、无支付密码)
+	 * @param bean
+	 * @return
+	 */
 	@Override
 	public ResultBean pay(RealTimeInstPayBean bean) {
 		ResultBean resultBean = null;

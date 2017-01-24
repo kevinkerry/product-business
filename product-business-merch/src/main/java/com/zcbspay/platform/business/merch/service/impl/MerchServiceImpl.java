@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.zcbspay.platform.business.commons.utils.StringUtil;
 import com.zcbspay.platform.business.exception.BusinessMerchException;
+import com.zcbspay.platform.business.merch.service.DataCheckFailedException;
 import com.zcbspay.platform.business.merch.service.MerchService;
 import com.zcbspay.platform.member.individual.bean.MemberBean;
 import com.zcbspay.platform.member.individual.bean.PoMemberBean;
@@ -25,6 +26,13 @@ public class MerchServiceImpl implements MerchService {
 	private  MemberService memberService;
 	@Autowired
 	private MemberOperationService memberOperationService;
+	
+	/**
+	 * 更新商户公钥
+	 * @param memberId
+	 * @param pub_key
+	 * @return
+	 */
 	@Override
 	public boolean updateMerchPubKey(String memberId, String pub_key) throws BusinessMerchException {
 		if(StringUtil.isEmpty(memberId)|| StringUtil.isEmpty(pub_key)){
@@ -46,6 +54,13 @@ public class MerchServiceImpl implements MerchService {
 		return true;
 	}
 
+	/**
+	 * 重置商户支付密码
+	 * @param memberId
+	 * @param pwd
+	 * @return
+	 * @throws DataCheckFailedException
+	 */
 	@Override
 	public boolean resetPayPwd(String memberId, String payPwd) throws BusinessMerchException {
 		if(StringUtil.isEmpty(memberId)|| StringUtil.isEmpty(payPwd)){

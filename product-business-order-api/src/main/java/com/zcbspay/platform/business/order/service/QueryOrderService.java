@@ -4,7 +4,7 @@ import com.zcbspay.platform.business.exception.BusinessOrderException;
 import com.zcbspay.platform.business.order.bean.ResultBean;
 /***
  * 查询订单相关
- * @author liusm
+ * @author zhanglh
  *
  */
 public interface QueryOrderService {

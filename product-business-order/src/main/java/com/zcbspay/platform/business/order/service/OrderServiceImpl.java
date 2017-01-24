@@ -21,6 +21,12 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private com.zcbspay.platform.payment.order.service.OrderService orderService;
 
+	/***
+	 * 创建消费订单
+	 * 
+	 * @param order
+	 * @return
+	 */
 	public ResultBean createConsumeOrder(OrderBean order) throws BusinessOrderException {
 		try {
 			if (order == null || order.getTxnSubType() == null || order.getTxnType() == null
@@ -41,6 +47,12 @@ public class OrderServiceImpl implements OrderService {
 		}
 	}
 
+	/***
+	 * 创建实时代付订单
+	 * 
+	 * @param order
+	 * @return
+	 */
 	@Override
 	public ResultBean createInsteadPayOrder(InstPayOrderBean order) throws BusinessOrderException {
 		try {

@@ -16,6 +16,13 @@ import com.zcbspay.platform.member.coopinsti.service.CoopInstiService;
 public class QueryCoopInstServiceImpl implements QueryCoopInstService {
     @Autowired
 	private CoopInstiService  coopInstiService;
+    
+	/***
+	 * 根据合作机构号和接入类型查询合作机构的密钥
+	 * @param coopInstCode
+	 * @param terminalAccessType  1:无线  2:个人门户 3:商户门户 4:WAP 5:开放接口
+	 * @return
+	 */
 	@Override
 	public CoopInstMkBean queryCoopInstMk(String coopInstCode, String terminalAccessType ) throws BusinessCoopInstException {
 		if(StringUtil.isEmpty(coopInstCode)||StringUtil.isEmpty(terminalAccessType)){

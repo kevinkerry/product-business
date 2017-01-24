@@ -17,19 +17,21 @@ import com.zcbspay.platform.member.merchant.service.MerchMKService;
 
 @Service
 public class QueryMerchMkServiceImpl implements QueryMerchMkService {
-	/*@Autowired
-	private MerchMKDAO merchMKDAOImpl;*/
-	
-//	@Reference(version="1.0")
 	@Autowired
 	private MerchMKService merchMKservice;
+
+	/**
+	 * 查询商户密钥
+	 * 
+	 * @param memberId
+	 * @return
+	 */
 	@Override
-//	@Transactional
 	public MerchMkBean queryMerchMkByMemberId(String memberId) throws BusinessMerchException {
 		if (StringUtil.isEmpty(memberId)) {
 			throw new BusinessMerchException("BT0000");
 		}
-		MerchMK merchMK= this.merchMKservice.get(memberId);
+		MerchMK merchMK = this.merchMKservice.get(memberId);
 		if (merchMK == null)
 			return null;
 		MerchMkBean result = BeanCopyUtil.copyBean(MerchMkBean.class, merchMK);

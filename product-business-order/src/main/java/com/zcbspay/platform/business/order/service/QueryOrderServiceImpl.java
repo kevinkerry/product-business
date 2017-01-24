@@ -15,8 +15,14 @@ import com.zcbspay.platform.support.order.query.exception.QueryOrderException;
 public class QueryOrderServiceImpl implements QueryOrderService {
 	private final static Logger log = LoggerFactory.getLogger(QueryOrderServiceImpl.class);
 	@Autowired
-	private com.zcbspay.platform.support.order.query.query.service.QueryOrderService queryService;//com\zcbspay\platform\support\order\query\query\service
+	private com.zcbspay.platform.support.order.query.query.service.QueryOrderService queryService;// com\zcbspay\platform\support\order\query\query\service
 
+	/****
+	 * 根据tn查询订单
+	 * 
+	 * @param tn
+	 * @return
+	 */
 	@Override
 	public ResultBean queryOrder(String tn) throws BusinessOrderException {
 		OrderResultBean order = null;
@@ -36,6 +42,13 @@ public class QueryOrderServiceImpl implements QueryOrderService {
 		}
 	}
 
+	/***
+	 * 根据商户和授理订单号查询订单
+	 * 
+	 * @param merchId
+	 * @param accOrderNo
+	 * @return
+	 */
 	@Override
 	public ResultBean queryOrder(String merchId, String accOrderNo) throws BusinessOrderException {
 		OrderResultBean order = null;
@@ -55,6 +68,13 @@ public class QueryOrderServiceImpl implements QueryOrderService {
 		}
 	}
 
+	/***
+	 * 
+	 * @param merchId
+	 * @param accOrderNo
+	 * @return
+	 * @throws BusinessOrderException
+	 */
 	@Override
 	public ResultBean queryInstPayOrder(String merchId, String accOrderNo) throws BusinessOrderException {
 		OrderResultBean order = null;

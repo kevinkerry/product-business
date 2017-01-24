@@ -6,7 +6,7 @@ import com.zcbspay.platform.business.pay.bean.ResultBean;
 
 /***
  * 支付相关
- * @author liusm
+ * @author zhanglh
  *
  */
 public interface QuickPayService {

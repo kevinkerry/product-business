@@ -6,7 +6,7 @@ import com.zcbspay.platform.business.order.bean.OrderBean;
 import com.zcbspay.platform.business.order.bean.ResultBean;
 /***
  * 订单相关
- * @author liusm
+ * @author zhanglh
  *
  */
 public interface OrderService {
